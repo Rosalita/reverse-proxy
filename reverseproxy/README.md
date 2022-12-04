@@ -1,22 +1,8 @@
-# Initial Thoughts
+#reverse-proxy
 
-Write a small go program which acts as a reverse proxy and addes a header to all responses. 
- - Small probably means use the standard library implementation of reverse proxy.
- - The request won't be modified, only the response will be modified with a header added.
-
-Provision the proxy with a Transport with jusifiable configuration choices.
-  - I will need to read up on transport choices so that I understand them fully.
-  - I also need to check if the default transport configuration used by standard library reverse proxy is appropriate.
-
-Configure the proxy to block any requests from a list of "bad" client ip addresses.
- - There will need to be some middleware that checks the request IP and rejects before forwarding request on.
-
- If there is time, create some local certificates and allow the proxy to work with HTTPS traffic on port 8443.
- - Planning to keep code for https reverse proxy separated from the http reverse proxy
-
- Example curl commands which might be useful include
- - httpbin.org - this is a simple http request and response service that can run in Docker container.
- - httpforever - this is a deliberately insecure website served over http.
+* A small go program which acts as a reverse proxy and adds a header to all responses. 
+* The proxy has been provisioned with a Transport using jusifiable configuration choices.
+* The proxy will block any requests from a list of "bad" client ip addresses.
 
 # Design Decisions
 
